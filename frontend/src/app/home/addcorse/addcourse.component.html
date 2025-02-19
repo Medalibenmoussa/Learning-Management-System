@@ -1,0 +1,46 @@
+
+<div class="bg-blue-100   font-bold m-2 flex flex-column  items-center justify-center" style="height: 95vh;">
+  <div class="bg-white layout-topbar flex flex-column items-center justify-center ">
+    <h1>Learning Management System</h1>
+  </div>
+  <div class="mt-5"></div>
+  <div class="my-6 mx-0 md:mx-6 md:my-0 mt-5 border-round bg-white font-bold  flex flex-column align-items-center justify-content-center"
+    style="height: 80vh;">
+    <p-toolbar styleClass="mb-2 mr-2 ml-2" class="w-full align-items-end justify-end">
+      <div></div>
+      <button pButton pRipple label="Log Out" icon="pi pi-sign-out" class="p-button p-button-danger "(click)="logout()"></button>
+    </p-toolbar>
+    <div style="height: 65vh;" class ="w-full">
+      <p-toolbar styleClass="mb-2 mr-2 ml-2" class="w-full">
+        <div></div>
+        <div class="flex flex-column align-items-center">
+          <h2>Add Course</h2>
+          <div class="flex flex-column items-center  gap-4 mb-4">
+          <div class="flex items-center gap-4 mb-4">
+            <label for="title" class="font-semibold w-24">Title</label>
+            <input pInputText id="title" class="flex-20" [(ngModel)]="course.title" autocomplete="off" />
+          </div>
+
+          <div class="flex items-center gap-4 mb-4">
+            <label for="description" class="font-semibold w-24">Description</label>
+            <input pInputText id="description" class="flex-20" [(ngModel)]="course.description" autocomplete="off" />
+          </div>
+
+          <div class="flex items-center gap-4 mb-8">
+            <label for="createdDate" class="font-semibold w-24">Created Date</label>
+            <p-datepicker [(ngModel)]="course.createdDate" />
+          </div>
+
+          <div class="flex justify-end gap-2">
+            <p-button label="Cancel" severity="secondary" routerLink="/home" />
+            <p-button label="Save" (onClick)="savecourse()" />
+          </div>
+        </div>
+        </div>
+        <div></div>
+      </p-toolbar>
+    </div>
+  </div>
+</div>
+
+<p-toast></p-toast>
